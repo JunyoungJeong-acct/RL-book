@@ -7530,12 +7530,12 @@ a.anchor-link {
 <li>When complete, fill out your publicly available GitHub repo file URL and group members below, then export or print this .ipynb file to PDF and upload the PDF to Gradescope.</li>
 </ul>
 <p><em>Link to this ipynb file in your public GitHub repo (replace below URL with yours):</em></p>
-<p><a href="https://github.com/my-username/my-repo/assignment-file-name.ipynb">https://github.com/my-username/my-repo/assignment-file-name.ipynb</a></p>
+<p><a href="https://github.com/JunyoungJeong-acct/RL-book/blob/8f79b287c2c73e2ef34637aa6582f1846299615c/assignment2/assignment2.ipynb">https://github.com/JunyoungJeong-acct/RL-book/blob/8f79b287c2c73e2ef34637aa6582f1846299615c/assignment2/assignment2.ipynb</a></p>
 <p><em>Group members (replace below names with people in your group):</em></p>
 <ul>
-<li>Person 1</li>
-<li>Person 2</li>
-<li>Person 3</li>
+<li>Junyoung Jeong</li>
+<li>Elliot Porter</li>
+<li>Andrew Sung</li>
 </ul>
 </div>
 </div>
@@ -7702,7 +7702,7 @@ $$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Question-3:-Dynamic-Price-Optimization-(Led-by-______)">Question 3: Dynamic Price Optimization (Led by ______)<a class="anchor-link" href="#Question-3:-Dynamic-Price-Optimization-(Led-by-______)">¶</a></h2><p>You own a supermarket, and you are $T$ days away from Halloween 🎃. You have just received $M$ Halloween masks from your supplier. You want to dynamically set the selling price of the Halloween masks at the start of each day in a manner that maximizes your <strong>Expected Total Sales Revenue</strong> for Halloween masks this season (assume no one will buy Halloween masks after Halloween).</p>
+<h2 id="Question-3:-Dynamic-Price-Optimization-(Led-by-Junyoung-Jeong)">Question 3: Dynamic Price Optimization (Led by Junyoung Jeong)<a class="anchor-link" href="#Question-3:-Dynamic-Price-Optimization-(Led-by-Junyoung-Jeong)">¶</a></h2><p>You own a supermarket, and you are $T$ days away from Halloween 🎃. You have just received $M$ Halloween masks from your supplier. You want to dynamically set the selling price of the Halloween masks at the start of each day in a manner that maximizes your <strong>Expected Total Sales Revenue</strong> for Halloween masks this season (assume no one will buy Halloween masks after Halloween).</p>
 <p>Assume that for each of the $T$ days, you are required to select a price for that day from one of $N$ prices $p_1, p_2, \dots, p_N \in \mathbb{R}$, and that price is the selling price for all masks on that day. Assume that the customer demand for the number of Halloween masks on any day is governed by a Poisson probability distribution with mean $\lambda_i \in \mathbb{R}$ if you select that day’s price to be $p_i$ (where $i$ is a choice among $1, 2, \dots, N$).</p>
 <p>Note that on any given day, the demand could exceed the number of Halloween masks you have in the store, in which case the number of masks sold on that day will be equal to the number of Halloween masks you had at the start of that day.</p>
 <p>We spoke about this example in class - referencing the slides here (if needed) could be helpful!</p>
@@ -7767,7 +7767,7 @@ This is a finite optimization problem so $V^*$ will be well defined.</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># The code for this solution is exactly copied from "clearance_pricing_mdp.py"</span>
@@ -7873,13 +7873,73 @@ This is a finite optimization problem so $V^*$ will be well defined.</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>
-<span class="ansi-red-intense-fg ansi-bold">Running cells with 'Python 3.9.6' requires the ipykernel package.
-</span>
-<span class="ansi-red-intense-fg ansi-bold">Run the following command to install 'ipykernel' into the Python environment. 
-</span>
-<span class="ansi-red-intense-fg ansi-bold">Command: '/usr/bin/python3 -m pip install ipykernel -U --user --force-reinstall'</span></pre>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>Optimal Value Function and Optimal Policy
+------------------------------------
+Time Step 0
+---------------
+{NonTerminal(state=0): 0.0,
+ NonTerminal(state=1): 0.7949014693829384,
+ NonTerminal(state=2): 1.3036943427169725,
+ NonTerminal(state=3): 1.642821185319824,
+ NonTerminal(state=4): 1.8912648812265112,
+ NonTerminal(state=5): 2.0361088127147537,
+ NonTerminal(state=6): 2.118894460455138,
+ NonTerminal(state=7): 2.185539582741706,
+ NonTerminal(state=8): 2.2207449910650334}
+For State 0: Do Action 0
+For State 1: Do Action 0
+For State 2: Do Action 0
+For State 3: Do Action 1
+For State 4: Do Action 1
+For State 5: Do Action 1
+For State 6: Do Action 2
+For State 7: Do Action 2
+For State 8: Do Action 2
+
+Time Step 1
+---------------
+{NonTerminal(state=0): 0.0,
+ NonTerminal(state=1): 0.6618496899823091,
+ NonTerminal(state=2): 1.0210612069374845,
+ NonTerminal(state=3): 1.2552730837697939,
+ NonTerminal(state=4): 1.3703565375198656,
+ NonTerminal(state=5): 1.4374841691175742,
+ NonTerminal(state=6): 1.4762558165681807,
+ NonTerminal(state=7): 1.491846938834271,
+ NonTerminal(state=8): 1.4974593929646847}
+For State 0: Do Action 0
+For State 1: Do Action 0
+For State 2: Do Action 1
+For State 3: Do Action 1
+For State 4: Do Action 1
+For State 5: Do Action 2
+For State 6: Do Action 2
+For State 7: Do Action 2
+For State 8: Do Action 2
+
+Time Step 2
+---------------
+{NonTerminal(state=0): 0.0,
+ NonTerminal(state=1): 0.44248439117999033,
+ NonTerminal(state=2): 0.6274531735399711,
+ NonTerminal(state=3): 0.7050988044712188,
+ NonTerminal(state=4): 0.7379200316604438,
+ NonTerminal(state=5): 0.7472079997715142,
+ NonTerminal(state=6): 0.7494359901591382,
+ NonTerminal(state=7): 0.7498989861159004,
+ NonTerminal(state=8): 0.7499837689803355}
+For State 0: Do Action 0
+For State 1: Do Action 1
+For State 2: Do Action 1
+For State 3: Do Action 2
+For State 4: Do Action 2
+For State 5: Do Action 2
+For State 6: Do Action 2
+For State 7: Do Action 2
+For State 8: Do Action 2
+
+</pre>
 </div>
 </div>
 </div>
@@ -7891,7 +7951,7 @@ This is a finite optimization problem so $V^*$ will be well defined.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Question-4:-Risk-Aversion-and-Utility-Optimization-under-CARA-Utility-(Led-by-______)">Question 4: Risk-Aversion and Utility Optimization under CARA Utility (Led by ______)<a class="anchor-link" href="#Question-4:-Risk-Aversion-and-Utility-Optimization-under-CARA-Utility-(Led-by-______)">¶</a></h2><p>You are tasked with analyzing the behavior of an investor who seeks to maximize their utility under <strong>CARA Utility</strong>. The investor has wealth $W$ and the CARA utility function:</p>
+<h2 id="Question-4:-Risk-Aversion-and-Utility-Optimization-under-CARA-Utility-(Led-by-Junyoung-Jeong)">Question 4: Risk-Aversion and Utility Optimization under CARA Utility (Led by Junyoung Jeong)<a class="anchor-link" href="#Question-4:-Risk-Aversion-and-Utility-Optimization-under-CARA-Utility-(Led-by-Junyoung-Jeong)">¶</a></h2><p>You are tasked with analyzing the behavior of an investor who seeks to maximize their utility under <strong>CARA Utility</strong>. The investor has wealth $W$ and the CARA utility function:</p>
 <p>$$
 U(W) = \frac{1 - e^{-aW}}{a}, \quad a &gt; 0,
 $$</p>
@@ -7950,8 +8010,8 @@ $$</p>
 <li><p>The expectated utility under CARA utility with risk aversion parameter $a$ and normally distributed returns $R \sim \mathcal{N}(\mu,\sigma^2)$ by using the moment generating function of the normal distribution.
 \begin{align}
  \mathbb{E}[U(W)] 
- &amp;= \mathbb{E}\left[\frac{1}{a} - \frac{1}{a}e^{-a ((1+r)(1-\pi) + (1+R)\pi)}\right]\\
- &amp;= \frac{1}{a} - \frac{1}{a} e^{-a((1+r)(1-\pi)+\pi)} \mathbb{E}\left[e^{R \pi} \right]\\
+ &amp;= \mathbb{E}\left[\frac{1}{a} - \frac{1}{a}e^{-a [(1+r)(1-\pi) + (1+R)\pi]}\right]\\
+ &amp;= \frac{1}{a} - \frac{1}{a} e^{-a[(1+r)(1-\pi)+\pi]} \mathbb{E}\left[e^{- a R \pi} \right]\\
  &amp;= \frac{1}{a} - \frac{1}{a} e^{-a [(1+r)(1-\pi) + \pi (\mu+1)] + \frac{1}{2} a^2 \pi^2 \sigma^2 }
 \end{align}
 The last equality follows from the moment generating function of the normal.</p>
@@ -7960,14 +8020,26 @@ The last equality follows from the moment generating function of the normal.</p>
 \begin{align}
  \mathbb{E}[U(W)]
  &amp;\approx \mathbb{E}\left[\frac{1-e^{-a C}}{a} + e^{-a C} (W - C) - \frac{a}{2} e^{-a C} (W-C)^2\right]\\
- &amp;= \frac{1}{a} + \mathbb{E}\left[e^{-a C}\left(-\frac{1}{a} + (W - C) - \frac{a}{2} (W-C)^2\right)\right]\\
+ &amp;= \frac{1}{a} + e^{-a C}\mathbb{E}\left[-\frac{1}{a} + (W - C) - \frac{a}{2} (W-C)^2\right]\\
 \end{align}
-Since returns are usually in $[0,1]$, we will take the approximation centered at $C = 0$.
+It may be especially appropriate to take the approximation centered around $C = \mathbb{E}[W]$.<br/>
 \begin{align}
  \mathbb{E}[U(W)]
- &amp;= \mathbb{E}\left[W - \frac{a}{2} W^2\right]\\
- &amp;= \mathbb{E}[W] - \frac{a}{2} \left(\mathbb{E}[W]^2 + \mathbb{V}[W]\right)
-\end{align}</p>
+ &amp;\approx \frac{1}{a} + e^{-a \mathbb{E}[W]}\mathbb{E}\left[-\frac{1}{a} + (W - \mathbb{E}[W]) - \frac{a}{2} (W-\mathbb{E}[W])^2\right]\\
+ &amp;= \frac{1}{a} + e^{-a \mathbb{E}[W]}\left(-\frac{1}{a} + (\mathbb{E}[W] - \mathbb{E}[W]) - \frac{a}{2} \mathbb{E}[(W-\mathbb{E}[W])^2]\right)\\
+ &amp;= \frac{1}{a} - e^{-a \mathbb{E}[W]}\left(\frac{1}{a} + \frac{a}{2} \mathbb{V}[W]\right)
+\end{align}
+To find the certainty-equivalent wealth $W_{CE}$, we solve the following for $W_{CE}$.
+\begin{align}
+ U(W_{CE})
+ &amp;= \mathbb{E}[U(W)]\\
+ \frac{1 - e^{-aW_{CE}}}{a}
+ &amp;= \frac{1}{a} - e^{-a \mathbb{E}[W]}\left(\frac{1}{a} + \frac{a}{2} \mathbb{V}[W]\right)\\
+ \implies 
+ W_{CE}
+ &amp;= \mathbb{E}[W] - \frac{1}{a} \ln\left(1 + \frac{a^2}{2} \mathbb{V}[W]\right)
+\end{align}
+where $\mathbb{E}[W] = (1+r)(1-\pi) + \pi (\mu+1)$ and $\mathbb{V}[W] = \pi^2 \sigma^2$.</p>
 </li>
 </ol>
 </div>
@@ -7998,7 +8070,17 @@ Since the problem is concave and differentiable, first order conditions are nece
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Part-(C)-Answer">Part (C) Answer<a class="anchor-link" href="#Part-(C)-Answer">¶</a></h3><p>From our results in Part (A), the absolute risk premium is:</p>
+<h3 id="Part-(C)-Answer">Part (C) Answer<a class="anchor-link" href="#Part-(C)-Answer">¶</a></h3><p>From our results in Part (A), the absolute risk premium is:
+\begin{align}
+    \mathbb{E}[W] - W_{CE}
+    &amp;= \frac{1}{a} \ln\left(1 + \frac{a^2}{2} \mathbb{V}[W]\right)\\
+    &amp;= \frac{1}{a} \ln\left(1 + \frac{a^2}{2} \pi^2 \sigma^2 \right)
+\end{align}</p>
+<p>For $x$ sufficiently small, $\ln(1+x) \approx x$, so for $\sigma^2$ sufficiently small
+\begin{align}
+    \frac{1}{a} \ln\left(1 + \frac{a^2}{2} \pi^2 \sigma^2 \right)
+    &amp;\approx \frac{a \pi^2 \sigma^2}{2}
+\end{align}</p>
 </div>
 </div>
 </div>
@@ -8009,7 +8091,17 @@ Since the problem is concave and differentiable, first order conditions are nece
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Part-(D)-Answer">Part (D) Answer<a class="anchor-link" href="#Part-(D)-Answer">¶</a></h3><p><span style="color:red"><em>fill in</em></span></p>
+<h3 id="Part-(D)-Answer">Part (D) Answer<a class="anchor-link" href="#Part-(D)-Answer">¶</a></h3><p>Extending our results from Part (B) our optimal allocation is with $r = 0.02, \mu = 0.08, \sigma^2 = 0.04$ and $a =3$ is
+\begin{align}
+    \pi^* = \frac{0.08 - 0.02}{3 * 0.04} = .5
+\end{align}
+We can now plug this into our results from Part (A) to compute the certainty-equivalent wealth $W_{CE}$.
+\begin{align} 
+    W_{CE}
+    &amp;= (1+r)(1-\pi^*) + \pi^* (\mu+1) - \frac{1}{a} \ln\left(1 + \frac{a^2}{2} (\pi^*)^2 \sigma^2 \right)\\
+    &amp;= (1+0.02)(1-0.5) + 0.5 (0.08+1) - \frac{1}{3} \ln\left(1 + \frac{3^2}{2} (0.5)^2 * 0.04 \right)\\
+    &amp;= 1.03533
+\end{align}</p>
 </div>
 </div>
 </div>
@@ -8020,7 +8112,14 @@ Since the problem is concave and differentiable, first order conditions are nece
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Part-(E)-Answer">Part (E) Answer<a class="anchor-link" href="#Part-(E)-Answer">¶</a></h3><p><span style="color:red"><em>fill in</em></span></p>
+<h3 id="Part-(E)-Answer">Part (E) Answer<a class="anchor-link" href="#Part-(E)-Answer">¶</a></h3><p>Now assuming that $R \sim Uniform[\alpha,\beta]$
+\begin{align}
+    \mathbb{E}[U(W)] 
+    &amp;= \mathbb{E}\left[\frac{1}{a} - \frac{1}{a}e^{-a [(1+r)(1-\pi) + (1+R)\pi]}\right]\\
+    &amp;= \frac{1}{a} - \frac{1}{a} e^{-a[(1+r)(1-\pi)+\pi]} \mathbb{E}\left[e^{- a R \pi} \right]\\
+    &amp;= \frac{1}{a} - \frac{1}{a} e^{-a[(1+r)(1-\pi)+\pi]} \frac{e^{-a\alpha \pi} - e^{-a\beta \pi}}{ap}\\
+    &amp;= \frac{1}{a} - \frac{1}{a^2 \pi} e^{-a[1+r-r\pi]} \left(e^{-a\alpha \pi} - e^{-a\beta \pi}\right)
+\end{align}</p>
 </div>
 </div>
 </div>
