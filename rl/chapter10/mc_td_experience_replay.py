@@ -1,4 +1,5 @@
 from typing import Sequence, TypeVar, Tuple, Mapping, Iterator, Dict
+
 from rl.markov_process import TransitionStep, ReturnStep, \
     NonTerminal, Terminal, FiniteMarkovRewardProcess
 from rl.function_approx import Tabular
@@ -6,9 +7,11 @@ from rl.distribution import Categorical
 from rl.returns import returns
 import rl.iterate as iterate
 from rl.function_approx import learning_rate_schedule
+
 import itertools
 import collections
 import numpy as np
+
 import rl.monte_carlo as mc
 import rl.td as td
 
