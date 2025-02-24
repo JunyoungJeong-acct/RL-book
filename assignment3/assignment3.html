@@ -14621,7 +14621,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -14630,9 +14630,11 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="kn">import</span> <span class="n">minimize_scalar</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterable</span><span class="p">,</span> <span class="n">Iterator</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">TypeVar</span><span class="p">,</span> \
+    <span class="n">Callable</span><span class="p">,</span> <span class="n">Sequence</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Dict</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rl.distribution</span><span class="w"> </span><span class="kn">import</span> <span class="n">Categorical</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">rl.markov_process</span><span class="w"> </span><span class="kn">import</span> <span class="n">FiniteMarkovProcess</span><span class="p">,</span> <span class="n">FiniteMarkovRewardProcess</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">rl.markov_process</span><span class="w"> </span><span class="kn">import</span> <span class="n">FiniteMarkovProcess</span><span class="p">,</span> \
+    <span class="n">FiniteMarkovRewardProcess</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rl.markov_decision_process</span><span class="w"> </span><span class="kn">import</span> <span class="n">FiniteMarkovDecisionProcess</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rl.policy</span><span class="w"> </span><span class="kn">import</span> <span class="n">FiniteDeterministicPolicy</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">rl.chapter10.prediction_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">compare_td_and_mc</span>
@@ -15696,15 +15698,11 @@ $$     V^*\bigl(\beta^{1/\gamma} x\bigr)
 $$     \beta\,V^*(\beta^{1/\gamma} x) 
      = \beta \,\beta^{\frac{1-\gamma}{\gamma}}\,V^*(x)
      = \beta^{\,1+\frac{1-\gamma}{\gamma}}\,V^*(x)
-     = \beta^{\frac{1}{\gamma}}\,V^*(x).$$<p>Putting these terms together and using 
-$\theta^* = 1-\beta^{1/\gamma}$,
-one can verify 
-$$\frac{(\theta^* x)^{1-\gamma}}{1-\gamma}</p>
-<ul>
-<li>\beta^{1/\gamma}\,V^<em>(x)
-= V^</em>(x),$$</li>
-</ul>
-<p>thereby satisfying the Bellman Optimality Equation.</p>
+     = \beta^{\frac{1}{\gamma}}\,V^*(x).$$<p>Putting these terms together and using $\theta^* = 1-\beta^{1/\gamma}$, one can verify</p>
+$$\frac{(\theta^* x)^{1-\gamma}}{1-\gamma}
++ \beta^{1/\gamma}\,V^*(x)
+= V^*(x),
+$$<p>thereby satisfying the Bellman Optimality Equation.</p>
 
 </div>
 </div>
@@ -16019,16 +16017,12 @@ $G_t = R_{t+1} + \gamma\,R_{t+2} + \gamma^2\,R_{t+3} + \dots + \gamma^{T-1 - t} 
 $G_t - V(S_t) 
 \;=\;
 \sum_{u=t}^{T-1}\,\gamma^{u - t}\,\bigl[\,R_{u+1} + \gamma\,V(S_{u+1}) - V(S_u)\bigr]$.</p>
-<p>$\newline$
-$\newline$</p>
 <p>Step 1. Expand the right-hand side:</p>
 $$\sum_{u=t}^{T-1} \gamma^{u - t}
-\bigl[R_{u+1} + \gamma\,V(S_{u+1}) - V(S_u)\bigr]$$$$ = \sum_{u=t}^{T-1} \gamma^{u-t} R_{u+1} + \gamma \sum_{u=t}^{T-1} \gamma^{u-t} V(S_{u+1}) - \sum_{u=t}^{T-1} \gamma^{u-t} V(S_u) $$<p>$\newline$
-$\newline$
-Step 2. Rewrite sums with index shifts:</p>
+\bigl[R_{u+1} + \gamma\,V(S_{u+1}) - V(S_u)\bigr]$$$$ = \sum_{u=t}^{T-1} \gamma^{u-t} R_{u+1} + \gamma \sum_{u=t}^{T-1} \gamma^{u-t} V(S_{u+1}) - \sum_{u=t}^{T-1} \gamma^{u-t} V(S_u) $$<p>Step 2. Rewrite sums with index shifts:</p>
 <p>Consider $\sum_{u=t}^{T-1} \gamma^{u - t + 1} V(S_{u+1})$. 
 Let $m = u + 1$. 
-Then when  $u = t$, $m = t+1$. $\newline$
+Then when  $u = t$, $m = t+1$. \
 And when $u = T-1$, $m = T$.
 So we get:</p>
 $$\sum_{u=t}^{T-1} \gamma^{u - t + 1} V(S_{u+1})
